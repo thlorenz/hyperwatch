@@ -1,0 +1,34 @@
+{
+  "name": "express-app",
+  "version": "0.0.0",
+  "description": "express-app using hyperwatch to show logs in browser",
+  "main": "express-app.js",
+  "scripts": {
+    "test": "node-trap test/*.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/express-app.git"
+  },
+  "homepage": "https://github.com/thlorenz/express-app",
+  "dependencies": {
+    "express": "~3.2.0",
+    "npmlog": "0.0.2",
+    "browserify": "~2.13.2",
+    "event-stream": "~3.0.14"
+  },
+  "devDependencies": {
+    "nodemon": "~0.7.6"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
+}
