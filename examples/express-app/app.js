@@ -3,11 +3,11 @@
 var express =  require('express')
   , app     =  express()
   , shoe    =  require('shoe')
-  , log     =  require('npmlog')
   , path    =  require('path')
   , build   =  require('./build')
   ;
 
+  var log = require('npmlog');
 app
   .use(express.logger('dev'))
   .get('/', function (req, res) {
@@ -18,18 +18,38 @@ app
     build().pipe(res);
   });
 
-var sock = shoe(function (stream) {
-  log.info('app', 'stream', stream);
-  var iv = setInterval(function () {
-        stream.write(Math.floor(Math.random() * 2));
-    }, 250);
+var stderr = shoe(function (stream) {
+  var stderr = process.stderr;
+  var stderr_write = stderr.write;
 
-    stream.on('end', function () {
-        clearInterval(iv);
-    });
-
-    stream.pipe(process.stdout, { end : false });
+  stderr.write = function () {
+    stderr_write.apply(stderr, arguments);
+    stream.write.apply(stream, arguments);
+  };
 });
 
-sock.install(app.listen(3000), '/watch');
+var stdout = shoe(function (stream) {
+  var stdout = process.stdout;
+  var stdout_write = stdout.write;
+
+  stdout.write = function () {
+    stdout_write.apply(stdout, arguments);
+    stream.write.apply(stream, arguments);
+  };
+});
+
+var listen = app.listen(3000);
+
+stderr.install(listen, '/stderr');
+stdout.install(listen, '/stdout');
+
 log.info('app', 'listening on ', { host: 'localhost', port: 3000 });
+
+
+var iv = setInterval(function () {
+  log.info('app', 'hi');
+}, 250);
+
+stderr.on('end', function () {
+  clearInterval(iv);
+});

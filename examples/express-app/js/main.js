@@ -7,9 +7,9 @@ var shoe = require('shoe')
 // create this and inject into page
 var result = document.getElementById('hyperwatch-output');
 
-var stream = shoe('/watch');
-var s = es.mapSync(function (msg) {
+var stderr = shoe('/stderr');
+var stdout = shoe('/stdout');
+var stream = es.mapSync(function (msg) {
   result.appendChild(document.createTextNode(msg));
-  return String(Number(msg) ^ 1);
 });
-s.pipe(stream).pipe(s);
+stderr.pipe(stream);
