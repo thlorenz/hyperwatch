@@ -2,7 +2,9 @@
 /*jshint browser: true */
 
 var shoe = require('shoe')
-  , hypernal = require('hypernal');
+  , hypernal = require('hypernal')
+  , getStyleProperty = require('get-style-property')
+  ;
 
 function addWatch(cols, rows, classname) {
   var term = hypernal(cols, rows);
@@ -18,7 +20,8 @@ var mini = addWatch(60, 40, 'hyperwatch-mini')
   , full = addWatch(100, 100, 'hyperwatch-full');
 
 mini.container.onclick = function () { 
-  var current = full.container.style.getProperty('display');
+  var current = getStyleProperty(full.container, 'display');
+
   var next = current === 'none' ? 'block' : 'none';
   full.container.style.setProperty('display', next);
 };

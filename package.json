@@ -13,7 +13,8 @@
   },
   "homepage": "https://github.com/thlorenz/hyperwatch",
   "dependencies": {
-    "hypernal": "~0.1.3"
+    "hypernal": "~0.1.3",
+    "get-style-property": "~0.1.0"
   },
   "devDependencies": {},
   "keywords": [],
