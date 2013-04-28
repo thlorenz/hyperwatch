@@ -20,6 +20,10 @@ app
   .get('/bundle.js', function (req, res) {
     res.setHeader('Content-Type', 'application/javascript');
     build().pipe(res);
+  })
+  .get('/error', function (req, res) {
+    log.error('app', new Error('Some very aweful error occured in your app'));
+    res.send(505);
   });
 
 hyperwatch(app.listen(3000));

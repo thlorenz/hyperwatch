@@ -36,5 +36,8 @@ window.full = full;
 var stderr = shoe('/stderr');
 var stdout = shoe('/stdout');
 
-stderr.pipe(mini.term).pipe(full.term);
-stdout.pipe(mini.term).pipe(full.term);
+stderr.pipe(mini.term);
+stderr.pipe(full.term);
+
+stdout.pipe(mini.term);
+stdout.pipe(full.term);
