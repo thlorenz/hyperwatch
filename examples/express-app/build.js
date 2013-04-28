@@ -7,7 +7,7 @@ var browserify =  require('browserify')
 
 var bundle = module.exports = function () {
   var bundle = browserify() 
-    .require(require.resolve('../..'), { entry: true })
+    .require(require.resolve('../../browser'), { entry: true })
     .require(require.resolve('./js/main'), { entry: true })
     .bundle({ debug: true })
     .pipe(mold.transformSourcesRelativeTo(path.join(__dirname, '..', '..')))

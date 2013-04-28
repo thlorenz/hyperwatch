@@ -2,7 +2,8 @@
   "name": "hyperwatch",
   "version": "0.0.0",
   "description": "Streams server side log messages to the browser and renders them inside your page.",
-  "main": "hyperwatch.js",
+  "main": "index.js",
+  "browserify": "browser.js",
   "scripts": {
     "test": "node-trap test/*.js"
   },

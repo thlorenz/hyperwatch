@@ -21,7 +21,6 @@
   "devDependencies": {
     "nodemon": "~0.7.6"
   },
-  "browser": "browser.js",
   "keywords": [],
   "author": {
     "name": "Thorsten Lorenz",
