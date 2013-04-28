@@ -16,11 +16,12 @@
     "express": "~3.2.0",
     "npmlog": "0.0.2",
     "browserify": "~2.13.2",
-    "event-stream": "~3.0.14"
+    "mold-source-map": "~0.2.0"
   },
   "devDependencies": {
     "nodemon": "~0.7.6"
   },
+  "browser": "browser.js",
   "keywords": [],
   "author": {
     "name": "Thorsten Lorenz",

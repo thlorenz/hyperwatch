@@ -1,0 +1,30 @@
+/* attach to head automatically - possibly allow customization */
+.hyperwatch-mini,
+.hyperwatch-full {
+  background       :  black;
+  position         :  absolute;
+  top              :  0;
+  overflow-y       :  hidden;
+  border           :  solid 2px #808080;
+  cursor           :  pointer;
+}
+
+.hyperwatch-mini {
+  right            :  0;
+  font-size        :  6px;
+  height           :  80px;
+  width            :  80px;
+  border-radius    :  3px;
+  margin           :  5px;
+}
+
+.hyperwatch-full {
+  right            :  100px;
+  font-size        :  14px;
+  height           :  800px;
+  width            :  800px;
+  border-radius    :  5px;
+  display          :  none;
+  z-index          :  99999999;
+  margin           :  10px;
+}
