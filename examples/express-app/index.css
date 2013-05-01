@@ -1,3 +1,8 @@
 button {
   cursor: pointer;
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 200px;
 }

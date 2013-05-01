@@ -8,6 +8,8 @@ var express    =  require('express')
   , hyperwatch =  require('../../')
   ;
 
+log.level = 'verbose';
+
 app
   .use(express.logger('dev'))
   .get('/', function (req, res) {
@@ -20,6 +22,11 @@ app
   .get('/bundle.js', function (req, res) {
     res.setHeader('Content-Type', 'application/javascript');
     build().pipe(res);
+  })
+  .get('/user', function (req, res) {
+    var user = { firstName: 'Bob', lastName: 'Marley', likes: 'Reggae', plays: 'guitar', rastafari: true };
+    log.verbose('app', 'sending user', user);
+    res.json(user);
   })
   .get('/error', function (req, res) {
     log.error('app', new Error('Some very aweful error occured in your app'));
