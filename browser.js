@@ -4,7 +4,9 @@
 var shoe = require('shoe')
   , hypernal = require('hypernal')
   , getStyleProperty = require('get-style-property')
+  , loadStyles = require('./load-styles')
   ;
+
 
 function addWatch(classname) {
   var term = hypernal();
@@ -17,6 +19,8 @@ function addWatch(classname) {
 
   return { container: container, term: term };
 }
+
+loadStyles();
 
 var mini = addWatch('hyperwatch-mini')
   , full = addWatch('hyperwatch-full');
