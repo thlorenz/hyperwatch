@@ -16,7 +16,8 @@
     "express": "~3.2.0",
     "npmlog": "0.0.2",
     "browserify": "~2.13.2",
-    "mold-source-map": "~0.2.0"
+    "mold-source-map": "~0.2.0",
+    "hyperwatch": "~0.1.0"
   },
   "devDependencies": {
     "nodemon": "~0.7.6"

@@ -2,7 +2,7 @@
 /*jshint browser: true */
 
 // just requiring hyperwatch will initialize it and add a terminal to the browser window
-require('../../../browser');
+require('hyperwatch');
 
 var causeError =  document.getElementById('cause-error')
   , getUser    =  document.getElementById('get-user')
