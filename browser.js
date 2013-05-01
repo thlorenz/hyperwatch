@@ -7,7 +7,6 @@ var shoe = require('shoe')
   , loadStyles = require('./load-styles')
   ;
 
-
 function addWatch(classname) {
   var term = hypernal();
   term.tail = true;
@@ -30,6 +29,12 @@ mini.container.onclick = function () {
 
   var next = current === 'none' ? 'block' : 'none';
   full.container.style.setProperty('display', next);
+
+  // Makes sense to start tailing every time we open full terminal and immediately scroll to bottom via empty write
+  if (next === 'block') { 
+    full.term.tail = true;
+    full.term.write('');
+  }
 };
 
 full.container.onclick = function () { 
