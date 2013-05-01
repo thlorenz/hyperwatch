@@ -1,6 +1,9 @@
 'use strict';
 /*jshint browser: true */
 
+// just requiring hyperwatch will initialize it and add a terminal to the browser window
+require('../../../browser');
+
 var causeError =  document.getElementById('cause-error')
   , getUser    =  document.getElementById('get-user')
   , getUnknown =  document.getElementById('get-unknown')
