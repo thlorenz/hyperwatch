@@ -1,6 +1,6 @@
 {
   "name": "hyperwatch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Streams server side log messages to the browser and renders them inside your page.",
   "main": "index.js",
   "browserify": "browser.js",
@@ -14,7 +14,8 @@
   "homepage": "https://github.com/thlorenz/hyperwatch",
   "dependencies": {
     "get-style-property": "~0.1.0",
-    "hypernal": "~0.2.0"
+    "hypernal": "~0.2.0",
+    "shoe": "0.0.10"
   },
   "devDependencies": {},
   "keywords": [],
