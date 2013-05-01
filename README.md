@@ -32,6 +32,19 @@ hyperwatch(app.listen(3000));
 ```
 *[full example](https://github.com/thlorenz/hyperwatch/tree/master/examples/express-app)*
 
+#### using ecstatic
+
+Pass http server:
+
+```js
+var ecstatic = require('ecstatic')(__dirname + '/static');
+
+var server = http.createServer(ecstatic);
+server.listen(3000);
+
+hyperwatch(server);
+```
+
 ## Demo
 
     npm explore hyperwatch && npm run demo
