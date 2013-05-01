@@ -32,7 +32,7 @@ var css = [
  , ''
  , '.hyperwatch-mini {'
  , '  right            :  0;'
- , '  font-size        :  3px;'
+ , '  font-size        :  2px;'
  , '  height           :  80px;'
  , '  width            :  80px;'
  , '  border-radius    :  3px;'
