@@ -16,7 +16,7 @@ function addWatch(classname) {
   document.body.appendChild(container);
   term.appendTo(container);
 
-  return { container: container, term: term };
+  return { container: container, term: term, child: container.children[0] };
 }
 
 loadStyles();
@@ -37,8 +37,12 @@ mini.container.onclick = function () {
   }
 };
 
-full.container.onclick = function () { 
-  full.term.tail = !full.term.tail;
+window.c = full.container;
+full.container.onscroll = function () {
+  var containerBottom = full.container.getBoundingClientRect().bottom
+    , childBottom = full.child.getBoundingClientRect().bottom;
+
+  full.term.tail = childBottom - containerBottom < 10;
 };
 
 window.mini = mini;
