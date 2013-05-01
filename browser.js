@@ -6,8 +6,10 @@ var shoe = require('shoe')
   , getStyleProperty = require('get-style-property')
   ;
 
-function addWatch(cols, rows, classname) {
-  var term = hypernal(cols, rows);
+function addWatch(classname) {
+  var term = hypernal();
+  term.tail = true;
+
   var container = document.createElement('div');
   container.setAttribute('class', classname);
   document.body.appendChild(container);
@@ -16,8 +18,8 @@ function addWatch(cols, rows, classname) {
   return { container: container, term: term };
 }
 
-var mini = addWatch(60, 40, 'hyperwatch-mini')
-  , full = addWatch(100, 100, 'hyperwatch-full');
+var mini = addWatch('hyperwatch-mini')
+  , full = addWatch('hyperwatch-full');
 
 mini.container.onclick = function () { 
   var current = getStyleProperty(full.container, 'display');
@@ -27,7 +29,7 @@ mini.container.onclick = function () {
 };
 
 full.container.onclick = function () { 
-  full.container.style.setProperty('display', 'none');
+  full.term.tail = !full.term.tail;
 };
 
 window.mini = mini;

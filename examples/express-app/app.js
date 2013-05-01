@@ -11,7 +11,7 @@ var express    =  require('express')
 app
   .use(express.logger('dev'))
   .get('/', function (req, res) {
-    res.sendfile('views/index.html');
+    res.sendfile(__dirname + '/views/index.html');
   })
   .get('/index.css', function (req, res) {
     res.setHeader('Content-Type', 'text/css');
@@ -30,8 +30,7 @@ hyperwatch(app.listen(3000));
 
 log.info('app', 'listening on ', { host: 'localhost', port: 3000 });
 
-
-var count = 0;
-var iv = setInterval(function () {
-  log.info('app', 'hi for the %s time', count++);
-}, 10000);
+setInterval(
+    log.info.bind(log, 'app', 'server hearbeat ***--- still alive ---***')
+  , 10000
+); 

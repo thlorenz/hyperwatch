@@ -11,7 +11,7 @@
 
 .hyperwatch-mini {
   right            :  0;
-  font-size        :  6px;
+  font-size        :  4px;
   height           :  80px;
   width            :  80px;
   border-radius    :  3px;
@@ -19,12 +19,18 @@
 }
 
 .hyperwatch-full {
+  top              :  100px;
   right            :  100px;
-  font-size        :  16px;
-  height           :  800px;
-  width            :  800px;
+  font-size        :  18px;
+  height           :  80%;
+  width            :  80%;
   border-radius    :  5px;
   display          :  none;
   z-index          :  99999999;
   margin           :  10px;
+}
+
+/* --- */
+button {
+  cursor: pointer;
 }
