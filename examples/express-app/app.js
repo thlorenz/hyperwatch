@@ -35,7 +35,7 @@ app
 
 hyperwatch(app.listen(3000));
 
-log.info('app', 'listening on ', { host: 'localhost', port: 3000 });
+log.info('app', 'listening on http://%s:%s', 'localhost', 3000);
 
 setInterval(
     log.info.bind(log, 'app', 'server hearbeat ***--- still alive ---***')
