@@ -46,4 +46,7 @@ var css = [
  , '  z-index          :  99999999;'
  , '  margin           :  10px;'
  , '}'
+ , '.hyperwatch-full > .terminal > div {'
+ , ' margin: 5px;'
+ , '}'
 ].join('\n');
