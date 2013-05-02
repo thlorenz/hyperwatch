@@ -16,6 +16,7 @@ test('given no opts', function (t) {
     t.equal(style(mini, 'width'), '200px', 'mini has medium compact width')
     t.equal(style(mini, 'height'), '200px', 'mini has medium compact height')
     t.equal(style(mini, 'font-size'), '6px', 'mini has small font')
+    t.end()
 
   })
 })
