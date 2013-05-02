@@ -5,6 +5,7 @@
   "main": "index.js",
   "browserify": "browser.js",
   "scripts": {
+    "test": "node test/browser/build && open test/browser/index.html",
     "demo": "cd examples/express-app && npm install && node app"
   },
   "repository": {
@@ -18,7 +19,12 @@
     "shoe": "0.0.10",
     "domready": "~0.2.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "~0.3.3",
+    "tap": "~0.4.2",
+    "mold-source-map": "~0.2.0",
+    "browserify": "~2.13.2"
+  },
   "keywords": [],
   "author": {
     "name": "Thorsten Lorenz",
