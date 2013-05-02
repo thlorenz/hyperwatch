@@ -37,13 +37,14 @@ require('hyperwatch')({
 ```js
 require('hyperwatch')({
     mini: {
-        position: 'bottom left'
-      , width: 600
-      , height: 300
-      , fontSize: 12 
+          position: 'bottom left'
+        , width: 600
+        , height: 300
+        , fontSize: 12 
+      }
     }
   , function () { console.log('terminals have been initialized'); }
-  });
+);
 ```
 
 ### Server Side
