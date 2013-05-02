@@ -20,8 +20,8 @@ function addWatch(classname) {
   return { container: container, term: term, child: container.children[0] };
 }
 
-function init () {
-  loadTerminalStyles();
+function init (opts) {
+  loadTerminalStyles(opts);
 
   var mini = addWatch('hyperwatch-mini')
     , full = addWatch('hyperwatch-full');
@@ -39,7 +39,6 @@ function init () {
     }
   };
 
-  window.c = full.container;
   full.container.onscroll = function () {
     var containerBottom = full.container.getBoundingClientRect().bottom
       , childBottom = full.child.getBoundingClientRect().bottom;
@@ -60,4 +59,6 @@ function init () {
   stdout.pipe(full.term);
 }
 
-domready(init);
+module.exports = function (opts, cb) {
+  domready(function (){ init(opts); cb(); });
+};
