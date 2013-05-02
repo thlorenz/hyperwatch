@@ -2,7 +2,7 @@
 /*jshint browser: true */
 
 // just requiring hyperwatch will initialize it and add a terminal to the browser window
-require('hyperwatch')();
+require('hyperwatch')({ mini: { position: 'top right', size: '120x120', fontSize: 8 } });
 
 var domready = require('domready');
 
