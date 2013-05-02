@@ -1,6 +1,8 @@
 'use strict';
 /*jshint browser: true */
 
+require('./lib/shim-trim');
+
 var shoe               =  require('shoe')
   , hypernal           =  require('hypernal')
   , getStyleProperty   =  require('get-style-property')
