@@ -10,9 +10,40 @@ Streams server side log messages to the browser and renders them inside your pag
 
 ### Client Side
 
+#### using default options
+
 ```js
 // just require hyperwatch in order to add a terminal to the browser window
-require('hyperwatch');
+require('hyperwatch')();
+```
+
+#### using custom options
+
+#### make mini terminal appear merely a thumbnail
+
+```js
+require('hyperwatch')({
+  mini: {
+      position: 'top right'
+    , width: 100
+    , height: 100
+    , fontSize: 3
+  }
+});
+```
+
+#### make mini terminal appear rather large and get called back when terminals have been initialized
+
+```js
+require('hyperwatch')({
+    mini: {
+        position: 'bottom left'
+      , width: 600
+      , height: 300
+      , fontSize: 12 
+    }
+  , function () { console.log('terminals have been initialized'); }
+  });
 ```
 
 ### Server Side
@@ -50,3 +81,4 @@ hyperwatch(server);
     npm explore hyperwatch && npm run demo
 
 Then open [localhost:3000](http://localhost:3000).
+
