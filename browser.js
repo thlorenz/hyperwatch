@@ -62,5 +62,5 @@ function init (opts) {
 }
 
 module.exports = function (opts, cb) {
-  domready(function (){ init(opts); cb(); });
+  domready(function (){ init(opts); cb && cb(); });
 };
