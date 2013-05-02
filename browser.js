@@ -1,11 +1,11 @@
 'use strict';
 /*jshint browser: true */
 
-var shoe             =  require('shoe')
-  , hypernal         =  require('hypernal')
-  , getStyleProperty =  require('get-style-property')
-  , loadStyles       =  require('./load-styles')
-  , domready         =  require('domready')
+var shoe               =  require('shoe')
+  , hypernal           =  require('hypernal')
+  , getStyleProperty   =  require('get-style-property')
+  , loadTerminalStyles =  require('./lib/load-terminal-styles')
+  , domready           =  require('domready')
   ;
 
 function addWatch(classname) {
@@ -21,7 +21,7 @@ function addWatch(classname) {
 }
 
 function init () {
-  loadStyles();
+  loadTerminalStyles();
 
   var mini = addWatch('hyperwatch-mini')
     , full = addWatch('hyperwatch-full');
