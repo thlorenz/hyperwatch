@@ -2,7 +2,7 @@
 /*jshint browser: true */
 
 // just requiring hyperwatch will initialize it and add a terminal to the browser window
-require('hyperwatch');
+require('hyperwatch')();
 
 var domready = require('domready');
 
@@ -11,7 +11,7 @@ domready(function () {
   var causeError =  document.getElementById('cause-error')
     , getUser    =  document.getElementById('get-user')
     , getUnknown =  document.getElementById('get-unknown')
-    , results    =  document.getElementById('results')
+    , results    =  document.getElementById('results');
 
   causeError.onclick = function () {
     var req = new XMLHttpRequest();
