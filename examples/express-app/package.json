@@ -17,7 +17,8 @@
     "npmlog": "0.0.2",
     "browserify": "~2.13.2",
     "mold-source-map": "~0.2.0",
-    "hyperwatch": "~0.1.0"
+    "hyperwatch": "~0.1.0",
+    "domready": "~0.2.11"
   },
   "devDependencies": {
     "nodemon": "~0.7.6"
