@@ -7,6 +7,7 @@ var shoe               =  require('shoe')
   , hypernal           =  require('hypernal')
   , getStyleProperty   =  require('get-style-property')
   , loadTerminalStyles =  require('./lib/load-terminal-styles')
+  , parseOpts          =  require('./lib/parse-opts')
   , domready           =  require('domready')
   ;
 
@@ -73,5 +74,9 @@ function init (opts) {
 }
 
 module.exports = function (opts, cb) {
-  domready(function (){ init(opts); cb && cb(); });
+  var parsedOpts = parseOpts(opts);
+  domready(function () { 
+    init(parsedOpts); 
+    cb && cb(); 
+  });
 };
