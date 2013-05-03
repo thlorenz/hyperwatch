@@ -28,7 +28,7 @@ function init (opts) {
   var mini = addWatch('hyperwatch-mini')
     , full = addWatch('hyperwatch-full');
 
-  mini.container.onclick = function () { 
+  function toggleFull() {
     var current = getStyleProperty(full.container, 'display');
 
     var next = current === 'none' ? 'block' : 'none';
@@ -39,6 +39,18 @@ function init (opts) {
       full.term.tail = true;
       full.term.write('');
     }
+  }
+
+  function jumpMini() {
+    var currentLeft   = getStyleProperty(this, 'left')
+      , currentRight  = getStyleProperty(this, 'right');
+
+    console.log('current %s:%s', currentLeft, currentRight);
+    this.style.left = currentLeft !== '0px' ? '0px' : '';
+  }
+
+  mini.container.onclick = function (event) { 
+    if(event.altKey) jumpMini.bind(this)(); else toggleFull.bind(this)();
   };
 
   full.container.onscroll = function () {
@@ -49,7 +61,6 @@ function init (opts) {
   };
 
   window.mini = mini;
-  window.full = full;
 
   var stderr = shoe('/stderr');
   var stdout = shoe('/stdout');
