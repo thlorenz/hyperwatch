@@ -43,11 +43,15 @@ function init (opts) {
   }
 
   function jumpMini() {
-    var currentLeft   = getStyleProperty(this, 'left')
-      , currentRight  = getStyleProperty(this, 'right');
-
-    console.log('current %s:%s', currentLeft, currentRight);
-    this.style.left = currentLeft !== '0px' ? '0px' : '';
+    var  current = getStyleProperty(this, 'left');
+    if (current === '0px') {
+      // jump right
+      var left = document.body.clientWidth - opts.mini.size.width;
+      this.style.left = left + 'px';
+    } else {
+      // jump left
+      this.style.left = '0px';
+    }
   }
 
   mini.container.onclick = function (event) { 
