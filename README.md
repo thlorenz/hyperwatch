@@ -77,6 +77,16 @@ server.listen(3000);
 hyperwatch(server);
 ```
 
+## Interactions
+
+### Click Mini Terminal
+
+Toggles full size Terminal
+
+### Alt/Option-Click Mini Terminal
+
+Make it jump from left to right and vice versa in case it gets in your way
+
 ## Demo
 
     npm explore hyperwatch && npm run demo
