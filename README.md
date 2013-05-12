@@ -2,6 +2,8 @@
 
 Streams server side log messages to the browser and renders them inside your page.
 
+[![screenshot](https://raw.github.com/thlorenz/hyperwatch/master/assets/screenshot.png)](http://thlorenz.github.io/hyperwatch/)
+
 ## Installation
 
     npm install hyperwatch
