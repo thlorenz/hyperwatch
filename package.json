@@ -6,7 +6,7 @@
   "browserify": "browser.js",
   "scripts": {
     "test": "node test/browser/build && open test/browser/index.html",
-    "demo": "cd examples/express-app && npm install && node app"
+    "demo": "cd ./examples/express-app && npm install && node app"
   },
   "repository": {
     "type": "git",
