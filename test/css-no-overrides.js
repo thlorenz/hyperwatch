@@ -3,6 +3,7 @@
 
 var test     =  require('tape')
   , style    =  require('get-style-property')
+  , fontsize =  require('./utils/fontsize')
   , hypernal =  require('..')
 
 test('given no opts', function (t) {
@@ -15,7 +16,7 @@ test('given no opts', function (t) {
     t.equal(style(mini, 'bottom'), '0px', 'mini is on the bottom')
     t.equal(style(mini, 'width'), '200px', 'mini has medium compact width')
     t.equal(style(mini, 'height'), '200px', 'mini has medium compact height')
-    t.equal(style(mini, 'font-size'), '6px', 'mini has small font')
+    t.equal(fontsize(mini), 5, 'mini has small font')
     t.end()
 
   })
