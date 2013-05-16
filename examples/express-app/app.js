@@ -5,7 +5,7 @@ var express    =  require('express')
   , log        =  require('npmlog')
   , path       =  require('path')
   , build      =  require('./build')
-  , hyperwatch =  require('hyperwatch')
+  , hyperwatch =  require('../..')
   ;
 
 log.level = 'verbose';
