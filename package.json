@@ -1,6 +1,6 @@
 {
   "name": "hyperwatch",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Streams server side log messages to the browser and renders them inside your page.",
   "main": "index.js",
   "browserify": "browser.js",
