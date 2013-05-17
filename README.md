@@ -62,7 +62,7 @@ var express    =  require('express')
   , app        =  express()
   , hyperwatch =  require('hyperwatch');
 
-hyperwatch(app.listen(3000));
+var config = hyperwatch(app.listen(3000));
 ```
 *[full example](https://github.com/thlorenz/hyperwatch/tree/master/examples/express-app)*
 
@@ -76,8 +76,27 @@ var ecstatic = require('ecstatic')(__dirname + '/static');
 var server = http.createServer(ecstatic);
 server.listen(3000);
 
-hyperwatch(server);
+var config = hyperwatch(server);
 ```
+
+## Configuration
+
+Calling `hyperwatch(server)` initializes and enables hyperwatch and returns a `config` object with the following functions:
+
+***config.disable***
+
+Invoking `config.disable()` will stop data to be streamed to the client and hide the mini terminal when the browser
+is refreshed.
+
+***config.enable***
+
+Invoking `config.enable()` will resume data to be streamed to the client and show the mini terminal when the browser
+is refreshed.
+
+***config.scrollback***
+
+Specifies the number of log messages that will be preserved between browser refreshes. The default is `10,000`. Keep in
+mind that this data is kept in memory when setting this to very high values.
 
 ## Interactions
 

@@ -9,6 +9,7 @@ var shoe               =  require('shoe')
   , loadTerminalStyles =  require('./lib/load-terminal-styles')
   , parseOpts          =  require('./lib/parse-opts')
   , domready           =  require('domready')
+  , through            =  require('through')
   ;
 
 function addWatch(classname) {
@@ -67,13 +68,31 @@ function init (opts) {
 
   window.mini = mini;
 
+  connectStreams(mini, full);
+}
+
+
+function connectStreams (mini, full) {
   var stderr = shoe('/stderr');
   var stdout = shoe('/stdout');
+  var showingMini;
 
-  stderr.pipe(mini.term);
+  // show mini only once we get data from the server since that means hyperwatch was enabled there
+  mini.container.style.display = 'none';
+  showingMini = false;
+
+  function showMini (data) {
+    if (!showingMini) {
+      mini.container.style.display = 'block';
+      showingMini = true;
+    }
+    this.queue(data);
+  }
+
+  stderr.pipe(through(showMini)).pipe(mini.term);
   stderr.pipe(full.term);
 
-  stdout.pipe(mini.term);
+  stdout.pipe(through(showMini)).pipe(mini.term);
   stdout.pipe(full.term);
 }
 
