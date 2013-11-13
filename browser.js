@@ -66,8 +66,6 @@ function init (opts) {
     full.term.tail = childBottom - containerBottom < 10;
   };
 
-  window.mini = mini;
-
   connectStreams(mini, full);
 }
 
