@@ -1,6 +1,6 @@
 {
   "name": "hyperwatch",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Streams server side log messages to the browser and renders them inside your page.",
   "main": "index.js",
   "browserify": "browser.js",
@@ -26,7 +26,15 @@
     "mold-source-map": "~0.2.0",
     "browserify": "~2.13.2"
   },
-  "keywords": [ "watch", "terminal", "browser", "socket", "stream", "develop", "productivity" ],
+  "keywords": [
+    "watch",
+    "terminal",
+    "browser",
+    "socket",
+    "stream",
+    "develop",
+    "productivity"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
