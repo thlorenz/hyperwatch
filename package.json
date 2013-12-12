@@ -26,7 +26,7 @@
     "mold-source-map": "~0.2.0",
     "browserify": "~2.13.2"
   },
-  "keywords": [],
+  "keywords": [ "watch", "terminal", "browser", "socket", "stream", "develop", "productivity" ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
