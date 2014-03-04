@@ -23,7 +23,7 @@ function allTests() {
       .filter(function (file) { 
         return path.extname(file) === '.js' 
       });
-  return jsfiles.map(path.resolve.bind(null, __dirname, '..'))
+  return jsfiles.map(function (x) { return path.resolve( __dirname, '..', x) })
 }
 
 if (!module.parent) {

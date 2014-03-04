@@ -16,9 +16,9 @@
   "dependencies": {
     "get-style-property": "~0.1.0",
     "hypernal": "~0.2.0",
-    "shoe": "0.0.10",
     "domready": "~0.2.11",
-    "through": "~2.3.4"
+    "through": "~2.3.4",
+    "shoe": "0.0.15"
   },
   "devDependencies": {
     "tape": "~0.3.3",
