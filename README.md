@@ -27,8 +27,7 @@ require('hyperwatch')();
 require('hyperwatch')({
   mini: {
       position: 'top right'
-    , width: 100
-    , height: 100
+    , size: '100x100'
     , fontSize: 3
   }
 });
@@ -40,8 +39,7 @@ require('hyperwatch')({
 require('hyperwatch')({
     mini: {
           position: 'bottom left'
-        , width: 600
-        , height: 300
+        , size: '600x100'
         , fontSize: 12 
       }
     }
